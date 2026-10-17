@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Labdidong</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Giao diện điều khiển</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="screen_title">Thông Tin Cá Nhân &amp; Cài Đặt</string>
+    <string name="card_title_personal">Thông tin cá nhân</string>
+    <string name="hint_full_name">Họ và tên</string>
+    <string name="hint_email">Địa chỉ Email</string>
+    <string name="card_title_options">Tùy chọn bổ sung</string>
+    <string name="gender_title">Giới tính:</string>
+    <string name="gender_male">Nam</string>
+    <string name="gender_female">Nữ</string>
+    <string name="gender_other">Khác</string>
+    <string name="switch_notifications">Nhận thông báo qua Email</string>
+    <string name="switch_dark_mode">Bật chế độ tiết kiệm pin</string>
+    <string name="btn_submit">Lưu thông tin</string>
+    <string name="card_title_result">Kết quả đã nhập</string>
+    <string name="default_result">Chưa có thông tin được lưu.</string>
+    <string name="lorem_ipsum">Nội dung màn hình thứ hai.</string>
+</resources>
