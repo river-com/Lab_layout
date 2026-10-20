@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- Header Toolbar -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/header_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvHeaderTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="14dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="14dp"
+                android:text="DEMO: CARDVIEW (CARD UI)"
+                android:textColor="@color/text_white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <!-- Green accent line at header bottom -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/teal_primary" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Scrollable Main Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Subtitle Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Giao diện Thẻ Nổi 3D trong Ứng Dụng"
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <!-- Student Card Container with outer padding so elevation shadows render -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingBottom="8dp">
+
+                <!-- MAIN STUDENT CARD -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardStudent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/card_bg"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="8dp"
+                    app:contentPadding="20dp"
+                    app:strokeColor="@color/teal_primary"
+                    app:strokeWidth="1.5dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Top Left Title: THẺ SINH VIÊN HCMUTE -->
+                        <TextView
+                            android:id="@+id/tvCardHeader"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="THẺ SINH VIÊN HCMUTE"
+                            android:textColor="@color/teal_primary"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@id/cardGpaBadge"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <!-- Subtitle: Khoa Công Nghệ Thông Tin -->
+                        <TextView
+                            android:id="@+id/tvFaculty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Khoa Công Nghệ Thông Tin"
+                            android:textColor="@color/text_gray"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toStartOf="@id/cardGpaBadge"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvCardHeader" />
+
+                        <!-- Top Right Circular Badge for GPA -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardGpaBadge"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            app:cardBackgroundColor="@color/code_bg"
+                            app:cardCornerRadius="36dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:strokeColor="@color/blue_ring"
+                            app:strokeWidth="2dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvGpa"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="3.85"
+                                    android:textColor="@color/gold_yellow"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="GPA"
+                                    android:textColor="@color/text_gray"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Student Name Row -->
+                        <TextView
+                            android:id="@+id/tvNameLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:text="Họ và tên: "
+                            android:textColor="@color/text_white"
+                            android:textSize="17sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvFaculty" />
+
+                        <TextView
+                            android:id="@+id/tvStudentName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Nguyễn Văn An"
+                            android:textColor="@color/text_white"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBaseline_toBaselineOf="@id/tvNameLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvNameLabel" />
+
+                        <!-- MSSV & Class -->
+                        <TextView
+                            android:id="@+id/tvStudentDetails"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="MSSV: 22110001 • Lớp: 22110CLA"
+                            android:textColor="@color/text_gray"
+                            android:textSize="13.5sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvNameLabel" />
+
+                        <!-- Inner Result Card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardResult"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            app:cardBackgroundColor="@color/result_bg"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:contentPadding="12dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvStudentDetails"
+                            app:strokeColor="@color/blue_result_border"
+                            app:strokeWidth="1.5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="KẾT QUẢ ĐẠT ĐƯỢC:"
+                                    android:textColor="@color/text_gray"
+                                    android:textSize="11.5sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tvResult"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="XUẤT SẮC (Top 5% Khóa)"
+                                    android:textColor="@color/gold_yellow"
+                                    android:textSize="17sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
+
+            <!-- Attribute Control Buttons / Pills -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <!-- Row 1: Elevation & Corner Radius buttons side by side -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Elevation Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnElevation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@color/btn_elevation_bg"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp"
+                        app:strokeWidth="0dp">
+
+                        <TextView
+                            android:id="@+id/tvElevationLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingStart="8dp"
+                            android:paddingTop="10dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="10dp"
+                            android:text="app:cardElevation=&quot;8dp&quot; (Đổ bóng 3D)"
+                            android:textColor="@color/text_white"
+                            android:textSize="11.5sp"
+                            android:textStyle="normal" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Corner Radius Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnCornerRadius"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@color/btn_radius_bg"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp"
+                        app:strokeWidth="0dp">
+
+                        <TextView
+                            android:id="@+id/tvCornerRadiusLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingStart="8dp"
+                            android:paddingTop="10dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="10dp"
+                            android:text="app:cardCornerRadius=&quot;24dp&quot; (Bo góc)"
+                            android:textColor="@color/text_white"
+                            android:textSize="11.5sp"
+                            android:textStyle="normal" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- Row 2: Content Padding button -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnContentPadding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/btn_padding_bg"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp">
+
+                    <TextView
+                        android:id="@+id/tvContentPaddingLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingStart="12dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="10dp"
+                        android:text="app:contentPadding=&quot;20dp&quot; (Đệm trong)"
+                        android:textColor="@color/text_white"
+                        android:textSize="11.5sp"
+                        android:textStyle="normal" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- CODE ILLUSTRATION CONTAINER -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCodeSnippet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/code_bg"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:contentPadding="16dp"
+                app:strokeColor="@color/teal_primary"
+                app:strokeWidth="1.5dp">
+
+                <TextView
+                    android:id="@+id/tvCodeSnippet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:lineSpacingExtra="5dp"
+                    android:textColor="@color/text_white"
+                    android:textSize="12.5sp"
+                    tools:text="// -- ĐIỀU KHIỂN TRONG KOTLIN ACTIVITY ------------\n\n// 1. Cập nhật nội dung các View bên trong Card\nbinding.tvStudentName.text = student.name\nbinding.tvGpa.text = &quot;${student.gpa} / 4.0&quot;\n\n// 2. Tùy biến thuộc tính CardView động tại runtime\nbinding.cardStudent.setCardBackgroundColor(getColor(R.color.blue))\nbinding.cardStudent.radius = 32f         // Đổi bo góc\nbinding.cardStudent.cardElevation = 16f // Tăng độ nổi" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

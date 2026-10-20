@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Theme & Background Colors -->
+    <color name="app_bg">#0E1621</color>
+    <color name="header_bg">#15202B</color>
+
+    <!-- Accents & Card Colors -->
+    <color name="teal_primary">#26A69A</color>
+    <color name="teal_accent">#10B981</color>
+    <color name="card_bg">#16222F</color>
+    <color name="blue_ring">#0288D1</color>
+    <color name="blue_result_border">#0288D1</color>
+    <color name="result_bg">#131E2A</color>
+    <color name="gold_yellow">#FFD54F</color>
+
+    <!-- Text Colors -->
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_gray">#94A3B8</color>
+
+    <!-- Control Button Colors -->
+    <color name="btn_elevation_bg">#0284C7</color>
+    <color name="btn_radius_bg">#10B981</color>
+    <color name="btn_padding_bg">#EA580C</color>
+
+    <!-- Code Highlight Colors -->
+    <color name="code_bg">#0D1520</color>
+    <color name="code_comment_green">#10B981</color>
+    <color name="code_yellow">#FFD54F</color>
+</resources>
